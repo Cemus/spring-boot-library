@@ -21,7 +21,17 @@ public class Book {
     private String description;
 
     @Column(name="publication_date", nullable = false)
+    @Temporal(TemporalType.DATE)
     private java.util.Date publicationDate;
+
+    @Column(name="genre", length=50)
+    private String genre;
+
+    @Column(name="author", length=50)
+    private String author;
+
+    @Column(name="publisher", length=50)
+    private String publisher;
 
     public Book(){
 

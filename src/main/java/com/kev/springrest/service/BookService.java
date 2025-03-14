@@ -1,6 +1,7 @@
 package com.kev.springrest.service;
 
 
+import com.kev.springrest.dto.BookDTO;
 import com.kev.springrest.exception.*;
 import com.kev.springrest.model.Book;
 import com.kev.springrest.repository.BookRepository;
@@ -8,8 +9,11 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 @Data
@@ -18,6 +22,8 @@ public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private BookDTOWrapper bookDTOWrapper;
 
     public Iterable<Book> findAll() {
         if (bookRepository.count() == 0) {
@@ -71,4 +77,36 @@ public class BookService {
         }
         bookRepository.deleteById(id);
     }
+
+    public BookDTO getBookDTO(final Long id) {
+        Book book = bookRepository.findById(id).orElse(null);
+
+        if (book == null) {
+            throw new BookNotFoundException(id);
+        }
+
+        return bookRepository.findById(id).stream()
+                .map(BookDTOWrapper::toDTO).findFirst().orElse(null);
+    }
+
+    public ArrayList<BookDTO> findAllDTO() {
+        if (bookRepository.count() == 0) {
+            throw new BooksNotFoundException();
+        }
+
+        Iterable<Book> books = bookRepository.findAll();
+
+        ArrayList<BookDTO> bookDTOs = new ArrayList<>();
+
+        for (Book b : books) {
+            bookDTOs.add(BookDTOWrapper.toDTO(b));
+        };
+
+        if (bookDTOs.isEmpty()) {
+            throw new BooksNotFoundException();
+        }
+
+        return bookDTOs;
+    }
+
 }

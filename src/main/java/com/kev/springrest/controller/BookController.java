@@ -1,15 +1,12 @@
 package com.kev.springrest.controller;
 
-import com.kev.springrest.exception.BooksNotFoundException;
-import com.kev.springrest.exception.DeleteBookException;
-import com.kev.springrest.exception.SaveBookExistsException;
-import com.kev.springrest.exception.UpdateBookNotFoundException;
+import com.kev.springrest.dto.BookDTO;
 import com.kev.springrest.model.Book;
 import com.kev.springrest.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
@@ -45,5 +42,15 @@ public class BookController {
     public String DeleteBook(@PathVariable long id) {
         bookService.deleteBook(id);
         return "Le livre a été supprimé avec succès !";
+    }
+
+    @GetMapping("/book-dto/{id}")
+    public BookDTO GetBookDTO(@PathVariable long id) {
+        return bookService.getBookDTO(id);
+    }
+
+    @GetMapping("/book-dtos")
+    public ArrayList<BookDTO> GetBookDTOs() {
+        return bookService.findAllDTO();
     }
 }
