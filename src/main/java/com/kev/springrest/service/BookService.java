@@ -34,7 +34,7 @@ public class BookService {
         throw new BookNotFoundException(id);
     }
 
-    public boolean saveBook(final Book book) {
+    public void saveBook(final Book book) {
         Iterable<Book>  books= bookRepository.findAll();
 
         if (book.getTitle() == null || book.getTitle().isEmpty() || book.getPublicationDate() == null || book.getDescription() == null || book.getDescription().isEmpty()) {
@@ -48,10 +48,9 @@ public class BookService {
         }
 
         bookRepository.save(book);
-        return true;
     }
 
-    public boolean updateBook(long id, final Book book) {
+    public void updateBook(long id, final Book book) {
         Optional<Book> prevBook = bookRepository.findById(id);
 
         if (prevBook.isEmpty()) {
@@ -64,14 +63,12 @@ public class BookService {
         oldBook.setPublicationDate(book.getPublicationDate());
 
         bookRepository.save(oldBook);
-        return true;
     }
 
-    public boolean deleteBook(final long id) {
+    public void deleteBook(final long id) {
         if (bookRepository.findById(id).isEmpty()){
             throw new BookNotFoundException(id);
         }
         bookRepository.deleteById(id);
-        return true;
     }
 }
