@@ -85,7 +85,7 @@ public class BookService {
         }
 
         return bookRepository.findById(id).stream()
-                .map(BookDTOWrapper::toDTO).findFirst().orElse(null);
+                .map(bookDTOWrapper::toDTO).findFirst().orElse(null);
     }
 
     public ArrayList<BookDTO> findAllDTO() {
@@ -98,7 +98,7 @@ public class BookService {
         ArrayList<BookDTO> bookDTOs = new ArrayList<>();
 
         for (Book b : books) {
-            bookDTOs.add(BookDTOWrapper.toDTO(b));
+            bookDTOs.add(bookDTOWrapper.toDTO(b));
         }
 
         if (bookDTOs.isEmpty()) {

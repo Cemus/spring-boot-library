@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookDTOWrapper {
-    public static BookDTO toDTO(Book book) {
+    public BookDTO toDTO(Book book) {
         return new BookDTO(
                 book.getId(),
                 book.getTitle(),
