@@ -38,7 +38,7 @@ public class BookService {
         Iterable<Book>  books= bookRepository.findAll();
 
         if (book.getTitle() == null || book.getTitle().isEmpty() || book.getPublicationDate() == null || book.getDescription() == null || book.getDescription().isEmpty()) {
-            throw new SaveBookBadRequestException(book);
+            throw new SaveBookBadRequestException(book.getTitle());
         }
 
         for (Book b : books) {
