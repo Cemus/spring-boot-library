@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 @Entity
 @Getter
 @Setter
@@ -12,6 +16,9 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Valid
+    @Min(message="Minimum trois caractères pour le nom du genre",value=3)
+    @NotBlank(message="Le genre doit avoir un nom")
     @Column(name = "name", nullable = false, length = 50, unique = true)
     private String name;
 
