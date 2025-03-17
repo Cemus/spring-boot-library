@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.sql.Date;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -24,11 +25,14 @@ public class Book {
     @Temporal(TemporalType.DATE)
     private java.util.Date publicationDate;
 
-    @Column(name="genre", length=50)
-    private String genre;
-
     @Column(name="author", length=50)
     private String author;
+
+    @ManyToMany
+    @Column(name="genres", length=50)
+    @JoinTable(name="book_genre")
+    private ArrayList<Genre> genres;
+
 
     @ManyToOne
     @JoinColumn(name = "id_publisher")
@@ -42,10 +46,10 @@ public class Book {
 
     }
 
-    public Book(String title, String description, String genre, String author, Date publicationDate, Publisher publisher) {
+    public Book(String title, String description, ArrayList<Genre> genres, String author, Date publicationDate, Publisher publisher) {
         this.title = title;
         this.description = description;
-        this.genre = genre;
+        this.genres = genres;
         this.author = author;
         this.publicationDate = publicationDate;
         this.publisher = publisher;
@@ -58,10 +62,9 @@ public class Book {
                 ", titre='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", auteur='" + author + '\'' +
-                ", genre='" + genre + '\'' +
+                ", genres='" + genres + '\'' +
                 ", publicationDate=" + publicationDate +
                 ", maison d'édition='" + publisher + '\'' +
-
                 '}';
     }
 }

@@ -11,6 +11,7 @@ public class BookDTOWrapper {
                 book.getId(),
                 book.getTitle(),
                 book.getAuthor(),
+                book.getGenres(),
                 book.getPublicationDate(),
                 book.getPublisher().getLabel()
         );
