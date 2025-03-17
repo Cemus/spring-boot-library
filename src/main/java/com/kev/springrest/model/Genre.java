@@ -12,17 +12,20 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="name", nullable = false, length = 50, unique = true)
+    @Column(name = "name", nullable = false, length = 50, unique = true)
     private String name;
 
-    public Genre() {}
+    public Genre() {
+    }
 
     public Genre(String name) {
         this.name = name;
     }
 
     public String toString() {
-        return name;
+        return "Genre{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
-
 }

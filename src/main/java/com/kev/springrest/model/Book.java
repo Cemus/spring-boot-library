@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -46,8 +47,9 @@ public class Book {
     private User user;
 
     public Book(){
-
+        this.genres = new ArrayList<>();
     }
+
 
     @Override
     public String toString() {
@@ -56,9 +58,15 @@ public class Book {
                 ", titre='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", auteur='" + author + '\'' +
-                ", genres='" + genres + '\'' +
+                ", genres='" + displayGenres() + '\'' +
                 ", publicationDate=" + publicationDate +
                 ", maison d'édition='" + publisher + '\'' +
                 '}';
+    }
+
+    public String displayGenres(){
+        String genreDisplay = "";
+        genres.forEach(genre -> genreDisplay.concat(genre.getName() + " "));
+        return genreDisplay;
     }
 }
