@@ -3,8 +3,7 @@ package com.kev.springrest.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import java.sql.Date;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Getter
@@ -29,9 +28,13 @@ public class Book {
     @Column(name="author", length=50)
     private String author;
 
+    @Getter
     @ManyToMany
-    @Column(name="genres", length=50)
-    @JoinTable(name="book_genre")
+    @Column(name="genre", length=50)
+    @JoinTable( name = "book_genre",
+            joinColumns = @JoinColumn( name = "id_book" ),
+            inverseJoinColumns = @JoinColumn( name = "id_genre" )
+    )
     private List<Genre> genres;
 
     @ManyToOne
@@ -45,17 +48,6 @@ public class Book {
     public Book(){
 
     }
-
-    public Book(String title, String description, ArrayList<Genre> genres, String author, Date publicationDate, Publisher publisher) {
-        this.title = title;
-        this.description = description;
-        this.genres = genres;
-        this.author = author;
-        this.publicationDate = publicationDate;
-        this.publisher = publisher;
-    }
-
-
 
     @Override
     public String toString() {

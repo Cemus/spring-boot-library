@@ -1,8 +1,5 @@
 package com.kev.springrest.service;
 
-import com.kev.springrest.exception.SaveBookBadRequestException;
-import com.kev.springrest.exception.SaveBookExistsException;
-import com.kev.springrest.model.Book;
 import com.kev.springrest.model.Genre;
 import com.kev.springrest.repository.GenreRepository;
 import lombok.Data;
