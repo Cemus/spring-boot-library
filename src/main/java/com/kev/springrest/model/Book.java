@@ -66,15 +66,11 @@ public class Book {
                 ", titre='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", auteur='" + author + '\'' +
-                ", genres='" + displayGenres() + '\'' +
+                ", genres='" + genres + '\'' +
                 ", publicationDate=" + publicationDate +
                 ", maison d'édition='" + publisher + '\'' +
                 '}';
     }
 
-    public String displayGenres(){
-        String genreDisplay = "";
-        genres.forEach(genre -> genreDisplay.concat(genre.getName() + " "));
-        return genreDisplay;
-    }
+
 }
