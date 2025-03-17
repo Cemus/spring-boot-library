@@ -2,10 +2,7 @@ package com.kev.springrest.controller;
 
 import com.kev.springrest.model.Publisher;
 import com.kev.springrest.service.PublisherService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -18,6 +15,7 @@ public class PublisherController {
 
     @PostMapping("/publisher")
     public Publisher addPublisher(@RequestBody Publisher publisher) {
+        System.out.println("test");
         publisherService.savePublisher(publisher);
         return publisher;
     }

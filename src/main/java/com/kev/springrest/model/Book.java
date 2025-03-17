@@ -42,19 +42,26 @@ public class Book {
 
     }
 
-    public Book(String title, String description, Date publicationDate) {
+    public Book(String title, String description, String genre, String author, Date publicationDate, Publisher publisher) {
         this.title = title;
         this.description = description;
+        this.genre = genre;
+        this.author = author;
         this.publicationDate = publicationDate;
+        this.publisher = publisher;
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", titre='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", auteur='" + author + '\'' +
+                ", genre='" + genre + '\'' +
                 ", publicationDate=" + publicationDate +
+                ", maison d'édition='" + publisher + '\'' +
+
                 '}';
     }
 }
