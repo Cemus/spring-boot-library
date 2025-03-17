@@ -5,22 +5,21 @@ import com.kev.springrest.model.Book;
 import com.kev.springrest.model.Genre;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 
 
 @Service
 public class BookDTOWrapper {
     public BookDTO toDTO(Book book) {
-        String genres = "";
+        StringBuilder genres = new StringBuilder();
 
         for (Genre g : book.getGenres()) {
-            genres += g.getName() + ", ";
+            genres.append(g.getName()).append(", ");
         }
         return new BookDTO(
                 book.getId(),
                 book.getTitle(),
                 book.getAuthor(),
-                genres,
+                genres.toString(),
                 book.getPublicationDate(),
                 book.getPublisher().getLabel()
         );

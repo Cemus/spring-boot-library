@@ -3,6 +3,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 @Setter
 @Getter
 @Entity
@@ -12,15 +17,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Valid
+    @NotBlank(message="Un prénom est nécessaire !")
     @Column(name="firstname", nullable = false, length = 50)
     private String firstname;
 
+    @Valid
+    @NotBlank(message="Un nom est nécessaire !")
     @Column(name="lastname", nullable = false, length = 50)
     private String lastname;
 
+    @Valid
+    @NotBlank(message="Une adresse courriel est nécessaire !")
+    @Email(message="Une adresse courriel valide est nécessaire !")
     @Column(name="email", nullable = false, length = 50, unique = true)
     private String email;
 
+    @Valid
+    @NotBlank(message="Un mot de passe est nécessaire !")
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,20}$")
     @Column(name="password", nullable = false, length = 100)
     private String password;
 
