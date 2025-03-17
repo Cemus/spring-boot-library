@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,8 +32,7 @@ public class Book {
     @ManyToMany
     @Column(name="genres", length=50)
     @JoinTable(name="book_genre")
-    private ArrayList<Genre> genres;
-
+    private List<Genre> genres;
 
     @ManyToOne
     @JoinColumn(name = "id_publisher")
@@ -54,6 +54,8 @@ public class Book {
         this.publicationDate = publicationDate;
         this.publisher = publisher;
     }
+
+
 
     @Override
     public String toString() {
