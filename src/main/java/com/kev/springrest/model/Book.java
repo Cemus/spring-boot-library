@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -47,6 +48,13 @@ public class Book {
     private User user;
 
     public Book(){
+        this.genres = new ArrayList<>();
+    }
+
+    public Book(String title, String description, Date publicationDate) {
+        this.title = title;
+        this.description = description;
+        this.publicationDate = publicationDate;
         this.genres = new ArrayList<>();
     }
 
