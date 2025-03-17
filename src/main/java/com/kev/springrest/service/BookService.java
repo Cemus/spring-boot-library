@@ -43,6 +43,7 @@ public class BookService {
         Iterable<Book>  books= bookRepository.findAll();
 
         if (book.getTitle() == null || book.getTitle().isEmpty() || book.getPublicationDate() == null || book.getDescription() == null || book.getDescription().isEmpty()) {
+            System.out.println(book);
             throw new SaveBookBadRequestException(book.getTitle());
         }
 
@@ -88,7 +89,7 @@ public class BookService {
                 .map(bookDTOWrapper::toDTO).findFirst().orElse(null);
     }
 
-    public ArrayList<BookDTO> findAllDTO() {
+    public Iterable<BookDTO> findAllDTO() {
         if (bookRepository.count() == 0) {
             throw new BooksNotFoundException();
         }
@@ -107,5 +108,7 @@ public class BookService {
 
         return bookDTOs;
     }
+
+
 
 }

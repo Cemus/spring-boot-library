@@ -12,7 +12,7 @@ public class BookDTOWrapper {
                 book.getTitle(),
                 book.getAuthor(),
                 book.getPublicationDate(),
-                book.getPublisher()
+                book.getPublisher().getLabel()
         );
     }
 }

@@ -50,7 +50,9 @@ public class BookController {
     }
 
     @GetMapping("/book-dtos")
-    public ArrayList<BookDTO> GetBookDTOs() {
+    public Iterable<BookDTO> GetBookDTOs() {
         return bookService.findAllDTO();
     }
+
+
 }

@@ -30,8 +30,13 @@ public class Book {
     @Column(name="author", length=50)
     private String author;
 
-    @Column(name="publisher", length=50)
-    private String publisher;
+    @ManyToOne
+    @JoinColumn(name = "id_publisher")
+    private Publisher publisher;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
 
     public Book(){
 
