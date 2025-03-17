@@ -16,7 +16,6 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Valid
     @Min(message="Minimum trois caractères pour le nom du genre",value=3)
     @NotBlank(message="Le genre doit avoir un nom")
     @Column(name = "name", nullable = false, length = 50, unique = true)
