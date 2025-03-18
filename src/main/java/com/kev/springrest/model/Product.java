@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name="name", nullable = false, length = 50)
@@ -28,7 +28,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_category")
-    private Publisher publisher;
+    private Category category;
 
 
     public Product() {
