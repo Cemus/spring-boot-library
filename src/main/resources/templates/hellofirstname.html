@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello world</title>
-</head>
+<div th:replace="fragments/head :: head"></div>
+<div th:replace="fragments/header :: header">...</div>
 <body>
-<header>
+
+<main>
     <h1 data-th-text="${ 'Bonjour : ' + firstname + ' !' }"
     >Bonjour !</h1>
-</header>
+</main>
+
 </body>
-</html>
+
+<div th:replace="fragments/footer :: footer">...</div>

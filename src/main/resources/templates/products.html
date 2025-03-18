@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Produits</title>
-</head>
+<div th:replace="fragments/head :: head"></div>
+<div th:replace="fragments/header :: header">...</div>
 <body>
-<header>
+
+<main>
     <h1>Tous les produits :</h1>
     <table>
         <tr th:each="product : ${products}">
@@ -14,6 +11,8 @@
             <td th:text="${product.price}"></td>
         </tr>
     </table>
-</header>
+    </main>
+
 </body>
-</html>
+
+<div th:replace="fragments/footer :: footer">...</div>

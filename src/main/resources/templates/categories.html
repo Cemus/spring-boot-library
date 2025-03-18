@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Categories</title>
-</head>
+<div th:replace="fragments/head :: head"></div>
+<div th:replace="fragments/header :: header">...</div>
 <body>
-  <ul th:each="category : ${categories}">
-    <li th:text="${category.id}"></li>
-      <li th:text="${category.label}"></li>
-  </ul>
+
+<main>
+    <ul th:each="category : ${categories}">
+        <li th:text="'id : ' +  ${category.id}"></li>
+        <li th:text="'Nom : ' + ${category.label}"></li>
+    </ul>
+</main>
 </body>
-</html>
+
+<div th:replace="fragments/footer :: footer">...</div>

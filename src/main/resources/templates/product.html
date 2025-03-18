@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Produit</title>
-</head>
+<div th:replace="fragments/head :: head"></div>
+<div th:replace="fragments/header :: header">...</div>
 <body>
-<header>
+
+<main>
     <h1>Produit</h1>
     <div>
         <h2 th:text="${ 'Produit : '+ product.name }">Produit</h2>
         <p th:text="${'Description : '+ product.description}">Description</p>
         <h3 th:text="${'Prix' + product.price + '€'}">Prix</h3>
     </div>
-</header>
+    </main>
+
 </body>
-</html>
+
+<div th:replace="fragments/footer :: footer">...</div>
