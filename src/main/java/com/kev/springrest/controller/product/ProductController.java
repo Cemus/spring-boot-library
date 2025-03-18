@@ -46,7 +46,7 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public String saveCategory(Product product){
+    public String saveProduct(Product product){
         productService.saveProduct(product);
         return "redirect:/products";
     }
