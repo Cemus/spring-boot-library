@@ -2,9 +2,8 @@ package com.kev.springrest.controller;
 
 import com.kev.springrest.model.Publisher;
 import com.kev.springrest.service.PublisherService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 
 @RestController
@@ -16,9 +15,8 @@ public class PublisherController {
         this.publisherService = publisherService;
     }
 
-    @Valid
     @PostMapping("/publisher")
-    public Publisher addPublisher(@RequestBody Publisher publisher) {
+    public Publisher addPublisher(@Valid @RequestBody Publisher publisher) {
         publisherService.savePublisher(publisher);
         return publisher;
     }

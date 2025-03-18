@@ -3,6 +3,7 @@ package com.kev.springrest.controller;
 import com.kev.springrest.dto.BookDTO;
 import com.kev.springrest.model.Book;
 import com.kev.springrest.service.BookService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class BookController {
     }
 
     @PostMapping("/book")
-    public Book AddBook(@RequestBody Book book) {
+    public Book AddBook(@RequestBody @Valid Book book) {
         bookService.saveBook(book);
         return book;
     }

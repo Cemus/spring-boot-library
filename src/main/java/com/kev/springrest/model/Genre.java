@@ -1,13 +1,13 @@
 package com.kev.springrest.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-
+@Validated
 @Entity
 @Getter
 @Setter
@@ -16,7 +16,7 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Min(message="Minimum trois caractères pour le nom du genre",value=3)
+    @Size(message="Minimum trois caractères pour le nom du genre",min=3)
     @NotBlank(message="Le genre doit avoir un nom")
     @Column(name = "name", nullable = false, length = 50, unique = true)
     private String name;
