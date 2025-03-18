@@ -32,7 +32,7 @@ public class CategoryController {
         return "categories";
     }
 
-    @PostMapping("/category/add")
+    @GetMapping("/category/add")
     public String addCategory(Model model){
         Category category = new Category();
         model.addAttribute("category", category);
@@ -41,7 +41,7 @@ public class CategoryController {
 
     @PostMapping("/category")
     public String saveCategory(Category category){
-        System.out.println(category);
+        categoryService.saveCategory(category);
         return "redirect:/categories";
     }
 }

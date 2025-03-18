@@ -3,9 +3,9 @@
 <body>
 
 <main>
-        <form th:action="@{/category/add}" th:object="${category}" method="POST">
+        <form th:action="@{/category}" th:object="${category}" method="POST">
             <label for="label">Libellé</label>
-            <input id="label" type="text" placeholder="Jardinage">
+            <input id="label" type="text" th:field="*{label}" placeholder="Jardinage">
             <button type="submit">Ajouter la catégorie</button>
         </form>
 </main>

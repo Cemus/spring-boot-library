@@ -1,15 +1,13 @@
 package com.kev.springrest.controller.product;
 
+import com.kev.springrest.model.Category;
 import com.kev.springrest.model.Product;
 import com.kev.springrest.service.product.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -39,6 +37,18 @@ public class ProductController {
         return "product";
     }
 
+    @GetMapping("/product/add")
+    public String addProduct(Model model) {
+        Product product = new Product();
+        model.addAttribute("product", product);
+
+    return "add-product";
+    }
+
     @PostMapping("/product")
+    public String saveCategory(Product product){
+        productService.saveProduct(product);
+        return "redirect:/products";
+    }
 
 }

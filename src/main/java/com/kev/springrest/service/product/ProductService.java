@@ -30,4 +30,8 @@ public class ProductService {
         }
         return productRepository.findAll();
     }
+
+    public void saveProduct(Product product) {
+         productRepository.save(product);
+    }
 }
