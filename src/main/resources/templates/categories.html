@@ -5,7 +5,7 @@
     <title>Categories</title>
 </head>
 <body>
-  <ul th:each="category : ${categorie}">
+  <ul th:each="category : ${categories}">
     <li th:text="${category.id}"></li>
       <li th:text="${category.label}"></li>
   </ul>
