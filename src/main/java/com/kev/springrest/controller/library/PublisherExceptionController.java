@@ -1,7 +1,7 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.library;
 
-import com.kev.springrest.exception.PublisherBadRequestException;
-import com.kev.springrest.exception.PublisherExistsException;
+import com.kev.springrest.exception.library.PublisherBadRequestException;
+import com.kev.springrest.exception.library.PublisherExistsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

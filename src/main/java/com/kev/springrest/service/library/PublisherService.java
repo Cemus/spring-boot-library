@@ -1,7 +1,7 @@
-package com.kev.springrest.service;
+package com.kev.springrest.service.library;
 
-import com.kev.springrest.exception.PublisherBadRequestException;
-import com.kev.springrest.exception.PublisherExistsException;
+import com.kev.springrest.exception.library.PublisherBadRequestException;
+import com.kev.springrest.exception.library.PublisherExistsException;
 import com.kev.springrest.model.Publisher;
 import com.kev.springrest.repository.PublisherRepository;
 import lombok.Data;

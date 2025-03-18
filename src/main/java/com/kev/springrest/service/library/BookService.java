@@ -1,8 +1,8 @@
-package com.kev.springrest.service;
+package com.kev.springrest.service.library;
 
 
 import com.kev.springrest.dto.BookDTO;
-import com.kev.springrest.exception.*;
+import com.kev.springrest.exception.library.*;
 import com.kev.springrest.model.Book;
 import com.kev.springrest.repository.BookRepository;
 import lombok.Data;

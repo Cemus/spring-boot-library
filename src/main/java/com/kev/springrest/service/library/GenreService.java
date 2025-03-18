@@ -1,4 +1,4 @@
-package com.kev.springrest.service;
+package com.kev.springrest.service.library;
 
 import com.kev.springrest.model.Genre;
 import com.kev.springrest.repository.GenreRepository;

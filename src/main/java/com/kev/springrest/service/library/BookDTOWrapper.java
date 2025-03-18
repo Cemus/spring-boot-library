@@ -1,4 +1,4 @@
-package com.kev.springrest.service;
+package com.kev.springrest.service.library;
 
 import com.kev.springrest.dto.BookDTO;
 import com.kev.springrest.model.Book;

@@ -1,4 +1,4 @@
-package com.kev.springrest.exception;
+package com.kev.springrest.exception.library;
 
 public class DeleteBookException extends RuntimeException {
     public DeleteBookException(long id) {

@@ -1,6 +1,6 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.user;
 
-import com.kev.springrest.exception.UserNotFoundException;
+import com.kev.springrest.exception.user.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

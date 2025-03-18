@@ -1,8 +1,8 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.library;
 
 import com.kev.springrest.dto.BookDTO;
 import com.kev.springrest.model.Book;
-import com.kev.springrest.service.BookService;
+import com.kev.springrest.service.library.BookService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

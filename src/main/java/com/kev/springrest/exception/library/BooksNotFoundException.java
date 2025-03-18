@@ -1,4 +1,4 @@
-package com.kev.springrest.exception;
+package com.kev.springrest.exception.library;
 
 public class BooksNotFoundException extends RuntimeException {
     public BooksNotFoundException() {

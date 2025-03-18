@@ -1,4 +1,4 @@
-package com.kev.springrest.service;
+package com.kev.springrest.service.user;
 
 import com.kev.springrest.model.User;
 import com.kev.springrest.repository.UserRepository;

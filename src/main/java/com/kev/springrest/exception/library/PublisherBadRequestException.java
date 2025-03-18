@@ -1,4 +1,4 @@
-package com.kev.springrest.exception;
+package com.kev.springrest.exception.library;
 
 public class PublisherBadRequestException extends RuntimeException {
     public PublisherBadRequestException(String message) {

@@ -1,4 +1,4 @@
-package com.kev.springrest.exception;
+package com.kev.springrest.exception.user;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(Long id) {

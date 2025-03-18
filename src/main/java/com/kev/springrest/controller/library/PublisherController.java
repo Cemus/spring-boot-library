@@ -1,7 +1,7 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.library;
 
 import com.kev.springrest.model.Publisher;
-import com.kev.springrest.service.PublisherService;
+import com.kev.springrest.service.library.PublisherService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 

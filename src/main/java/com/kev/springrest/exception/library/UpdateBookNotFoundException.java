@@ -1,4 +1,4 @@
-package com.kev.springrest.exception;
+package com.kev.springrest.exception.library;
 
 public class UpdateBookNotFoundException extends RuntimeException {
     public UpdateBookNotFoundException(String title, long id) {

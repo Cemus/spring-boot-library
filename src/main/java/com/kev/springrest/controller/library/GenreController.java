@@ -1,7 +1,7 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.library;
 
 import com.kev.springrest.model.Genre;
-import com.kev.springrest.service.GenreService;
+import com.kev.springrest.service.library.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;

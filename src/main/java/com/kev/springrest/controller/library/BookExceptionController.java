@@ -1,6 +1,6 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.library;
 
-import com.kev.springrest.exception.*;
+import com.kev.springrest.exception.library.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

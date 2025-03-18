@@ -1,4 +1,4 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.route;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

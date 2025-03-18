@@ -1,8 +1,8 @@
-package com.kev.springrest.controller;
+package com.kev.springrest.controller.user;
 
-import com.kev.springrest.exception.UserNotFoundException;
+import com.kev.springrest.exception.user.UserNotFoundException;
 import com.kev.springrest.model.User;
-import com.kev.springrest.service.UserService;
+import com.kev.springrest.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
