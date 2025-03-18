@@ -26,6 +26,11 @@ public class Product {
     @Column(name="price", nullable = false)
     private Double price;
 
+    @ManyToOne
+    @JoinColumn(name = "id_category")
+    private Publisher publisher;
+
+
     public Product() {
     }
 

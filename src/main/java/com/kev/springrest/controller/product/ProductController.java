@@ -14,7 +14,6 @@ import java.util.Optional;
 
 
 @Controller
-@RequestMapping
 public class ProductController {
 
     @Autowired
