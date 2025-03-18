@@ -8,10 +8,10 @@
 <header>
     <h1>Tous les produits :</h1>
     <table>
-        <tr th:each="Produits : ${products}">
-            <td th:text="${name}"></td>
-            <td th:text="${description}"></td>
-            <td th:text="${price}"></td>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
         </tr>
     </table>
 </header>
